@@ -1,0 +1,197 @@
+/* Global */
+:root {
+  --primaryClr: rgb(224, 224, 224);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 150px;
+}
+
+.computer-hand {
+  transform: scaleX(-1)
+}
+
+/* Game */
+section {
+  height: 100vh;
+  background-color: rgb(39,41,68);
+}
+
+/* Score */
+.score {
+  height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--primaryClr);
+}
+
+.score h2 {
+  font-size: 1.5rem;
+}
+
+.score p {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.score-style {
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.player-score {
+  color: lightgreen;
+  border: 1px solid lightgreen;
+}
+
+.computer-score {
+  color: lightcoral;
+  border: 1px solid lightcoral;
+}
+
+/* Intro */
+.intro {
+  color: var(--primaryClr);
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: opacity 0.5s ease;
+}
+
+.intro h1 {
+  font-size: 3rem;
+}
+
+.intro button,
+.match button {
+  width: 100px;
+  height: 45px;
+  color: var(--primaryClr);
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  background: rgb(45, 117, 96);
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.5s ease;
+}
+
+.intro button:hover,
+.match button:hover {
+  background-color: darkgreen;
+}
+
+/* Match */
+.match {
+  width: 70%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  transition: opacity 0.5s ease 0.5s;
+}
+
+.winner {
+  color: var(--primaryClr);
+  text-align: center;
+  font-size: 2.5rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.hands, .options {
+  display: flex;
+  justify-content:  space-evenly;
+  align-items: center;
+} 
+
+.fade-out{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fade-in{
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Animation */
+@keyframes shakePlayer {
+  0% {
+    transform: rotateZ(0deg)
+  }
+  50% {
+    transform: rotateZ(-45deg);
+  }
+  100% {
+    transform: rotateZ(0deg)
+  }
+  
+}
+
+@keyframes shakeComputer {
+  0% {
+    transform: scaleX(-1) rotateZ(0deg)
+  }
+  50% {
+    transform: scaleX(-1) rotateZ(-45deg);
+  }
+  100% {
+    transform: scaleX(-1) rotateZ(0deg)
+  }
+  
+}
+
+/* Media querry */
+
+@media screen and (max-width: 500px) {
+  .score {
+    flex-direction: column;
+  }
+
+  .intro h1 {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .score {
+    padding-top: 2rem;
+  }
+
+  .player-score {
+    margin: 1rem; 
+  }
+
+  .match {
+    margin: 4rem 0;
+  }
+
+  .winner {
+    margin-top: 2rem;
+  }
+
+  .options {
+    flex-direction: column;
+     
+  }
+  .options button {
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+  
+
